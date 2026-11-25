@@ -1,0 +1,93 @@
+:root {
+  --bg: #fbfaf7;
+  --text: #1f1d1a;
+  --muted: #6b665e;
+  --rule: #e4e0d8;
+  --accent: #8a2b1e;
+  --chip: #f1ede5;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161514;
+    --text: #e9e6e0;
+    --muted: #a09a90;
+    --rule: #2e2c29;
+    --accent: #e08a72;
+    --chip: #24221f;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.site-header { border-bottom: 1px solid var(--rule); }
+.site-header .wrap {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 16px; padding-bottom: 16px;
+  font-family: Inter, system-ui, sans-serif; font-size: 15px;
+}
+.site-header .name { color: var(--text); font-weight: 500; }
+.site-header nav a { color: var(--muted); margin-left: 20px; }
+.site-header nav a:hover { color: var(--accent); }
+
+.intro { padding: 56px 0 24px; }
+h1 { font-size: 40px; font-weight: 600; margin: 0 0 16px; letter-spacing: -0.01em; }
+.lede { font-size: 21px; }
+
+.interests { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0; }
+.interests span {
+  background: var(--chip); border-radius: 999px; padding: 4px 12px;
+  font-family: Inter, system-ui, sans-serif; font-size: 13px; color: var(--muted);
+}
+.contact { font-family: Inter, system-ui, sans-serif; font-size: 15px; }
+.contact span { color: var(--muted); margin: 0 6px; }
+
+section { padding: 16px 0; }
+h2 {
+  font-size: 26px; font-weight: 600; margin: 40px 0 8px;
+  padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+}
+h3 {
+  font-family: Inter, system-ui, sans-serif; font-size: 13px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);
+  margin: 28px 0 8px;
+}
+
+.pubs { list-style: none; padding: 0; margin: 0; }
+.pubs li { margin-bottom: 14px; }
+.pubs .title { font-weight: 600; }
+
+.roles { margin: 16px 0 0; }
+.roles div {
+  display: grid; grid-template-columns: 1fr auto; column-gap: 16px;
+  margin-bottom: 18px;
+}
+.roles dt { font-weight: 600; }
+.roles dd { margin: 0; grid-column: 1 / -1; }
+.roles dd.when {
+  grid-column: 2; grid-row: 1; color: var(--muted);
+  font-family: Inter, system-ui, sans-serif; font-size: 14px; padding-top: 4px;
+}
+
+footer { padding: 40px 20px 56px; color: var(--muted); font-size: 14px;
+  font-family: Inter, system-ui, sans-serif; }
+
+@media (max-width: 560px) {
+  body { font-size: 17px; }
+  h1 { font-size: 32px; }
+  .lede { font-size: 19px; }
+  .site-header nav a { margin-left: 14px; }
+}
